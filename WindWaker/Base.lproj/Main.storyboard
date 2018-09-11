@@ -6,6 +6,7 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14088"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -36,50 +37,57 @@
                                             <rect key="frame" x="0.0" y="0.0" width="342" height="496"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="maxT" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="PNM-DC-Yrd">
-                                                    <rect key="frame" x="8" y="333" width="364" height="21"/>
-                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                    <nil key="textColor"/>
-                                                    <nil key="highlightedColor"/>
-                                                </label>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Date" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vMR-BC-env">
-                                                    <rect key="frame" x="9" y="308" width="332" height="21"/>
-                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                    <nil key="textColor"/>
-                                                    <nil key="highlightedColor"/>
-                                                </label>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="minT" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ew5-Za-4JI">
-                                                    <rect key="frame" x="10" y="354" width="332" height="21"/>
-                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                    <nil key="textColor"/>
-                                                    <nil key="highlightedColor"/>
-                                                </label>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Weekday" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="RbA-3X-FMt">
-                                                    <rect key="frame" x="7" y="288" width="332" height="21"/>
-                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                    <nil key="textColor"/>
-                                                    <nil key="highlightedColor"/>
-                                                </label>
-                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Uaa-ho-XpM">
-                                                    <rect key="frame" x="75" y="20" width="223" height="258.5"/>
+                                                <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" alignment="center" spacing="-8" translatesAutoresizingMaskIntoConstraints="NO" id="BGN-NE-Elk">
+                                                    <rect key="frame" x="8" y="330.5" width="326" height="149.5"/>
+                                                    <subviews>
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Weekday" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="RbA-3X-FMt">
+                                                            <rect key="frame" x="123" y="0.0" width="80.5" height="43.5"/>
+                                                            <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                                            <color key="textColor" red="0.99999600649999998" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                            <nil key="highlightedColor"/>
+                                                        </label>
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Date" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vMR-BC-env">
+                                                            <rect key="frame" x="142.5" y="35.5" width="41.5" height="43.5"/>
+                                                            <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                                            <color key="textColor" red="0.99999600649999998" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                            <nil key="highlightedColor"/>
+                                                        </label>
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="maxT" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="PNM-DC-Yrd">
+                                                            <rect key="frame" x="140" y="71" width="46.5" height="43"/>
+                                                            <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                                            <color key="textColor" red="0.99999600649999998" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                            <nil key="highlightedColor"/>
+                                                        </label>
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="minT" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ew5-Za-4JI">
+                                                            <rect key="frame" x="142.5" y="106" width="41.5" height="43.5"/>
+                                                            <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                                            <color key="textColor" red="0.99999600649999998" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                            <nil key="highlightedColor"/>
+                                                        </label>
+                                                    </subviews>
+                                                </stackView>
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Uaa-ho-XpM">
+                                                    <rect key="frame" x="68.5" y="25" width="205" height="297.5"/>
                                                 </imageView>
                                             </subviews>
                                         </view>
                                         <color key="backgroundColor" red="0.0" green="0.32852089410000002" blue="0.57488495110000004" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <constraints>
+                                            <constraint firstItem="BGN-NE-Elk" firstAttribute="top" secondItem="Uaa-ho-XpM" secondAttribute="bottom" constant="8" id="4i0-rF-eaE"/>
                                             <constraint firstItem="Uaa-ho-XpM" firstAttribute="centerX" secondItem="sYX-Uj-zid" secondAttribute="centerX" id="53t-MA-yH2"/>
                                             <constraint firstItem="Uaa-ho-XpM" firstAttribute="centerY" secondItem="sYX-Uj-zid" secondAttribute="centerY" multiplier="0.7" id="5Yo-RJ-x6G"/>
+                                            <constraint firstAttribute="bottomMargin" secondItem="BGN-NE-Elk" secondAttribute="bottom" constant="8" id="KBx-V4-Xtq"/>
+                                            <constraint firstItem="BGN-NE-Elk" firstAttribute="leading" secondItem="sYX-Uj-zid" secondAttribute="leadingMargin" id="Udi-Eu-JMD"/>
                                             <constraint firstItem="Uaa-ho-XpM" firstAttribute="height" secondItem="sYX-Uj-zid" secondAttribute="height" multiplier="0.6" id="d1x-ud-zmP"/>
+                                            <constraint firstAttribute="trailingMargin" secondItem="BGN-NE-Elk" secondAttribute="trailing" id="qYL-qY-u5h"/>
                                             <constraint firstItem="Uaa-ho-XpM" firstAttribute="width" secondItem="sYX-Uj-zid" secondAttribute="width" multiplier="0.6" id="ySv-ZQ-ZUh"/>
                                         </constraints>
                                         <connections>
                                             <outlet property="dateLabel" destination="vMR-BC-env" id="Od7-au-Wti"/>
                                             <outlet property="maxTempLabel" destination="PNM-DC-Yrd" id="QIQ-ZX-odP"/>
+                                            <outlet property="minTempLabel" destination="ew5-Za-4JI" id="fAJ-Qa-piZ"/>
                                             <outlet property="weatherImage" destination="Uaa-ho-XpM" id="ZFQ-4q-qWT"/>
+                                            <outlet property="weekdayLabel" destination="RbA-3X-FMt" id="dBc-z5-2ns"/>
                                         </connections>
                                     </collectionViewCell>
                                 </cells>
@@ -87,6 +95,7 @@
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3hF-JX-PiZ">
                                 <rect key="frame" x="0.0" y="554" width="375" height="113"/>
                                 <color key="backgroundColor" red="0.35796440972222221" green="0.45641441261851851" blue="0.57488495110000004" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
                                 <state key="normal" title="Celcius">
                                     <color key="titleColor" red="0.99999600649999998" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 </state>

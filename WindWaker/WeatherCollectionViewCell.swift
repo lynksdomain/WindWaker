@@ -11,4 +11,6 @@ class WeatherCollectionViewCell: UICollectionViewCell {
     @IBOutlet weak var maxTempLabel: UILabel!
     @IBOutlet weak var weatherImage: UIImageView!
     @IBOutlet weak var dateLabel: UILabel!
+    @IBOutlet weak var weekdayLabel: UILabel!
+    @IBOutlet weak var minTempLabel: UILabel!
 }

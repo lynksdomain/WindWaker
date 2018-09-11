@@ -83,22 +83,21 @@ extension WeatherViewController: UICollectionViewDataSource {
         let dateInfo = getDisplayDate(timestamp: Double(selectedForecast.timestamp))
         
         if useFarenheit {
-            cell.maxTempLabel.text = selectedForecast.maxTempF.description + "°F"
+            cell.maxTempLabel.text = "Max: " + selectedForecast.maxTempF.description + "°F"
+            cell.minTempLabel.text = "Min: " + selectedForecast.minTempF.description + "°F"
+
         } else {
-            cell.maxTempLabel.text = selectedForecast.maxTempC.description + "°C"
+            cell.maxTempLabel.text = "Max: " + selectedForecast.maxTempC.description + "°C"
+            cell.minTempLabel.text = "Min: " + selectedForecast.minTempC.description + "°C"
         }
-        
-        
-        
-        cell.dateLabel.text = dateInfo.date + " " + dateInfo.weekday
+        cell.weekdayLabel.text = dateInfo.weekday
+        cell.dateLabel.text = dateInfo.date
         cell.weatherImage.image = UIImage(named: selectedForecast.icon)
         return cell
     }
 }
 
 extension WeatherViewController: UICollectionViewDelegateFlowLayout {
-        
-
         func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
             return CGSize(width: (collectionView.bounds.width), height: collectionView.bounds.height * 0.95)
         }
