@@ -21,6 +21,7 @@ class WeatherViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         weatherCV.dataSource = self
+        weatherCV.delegate = self
         WeatherAPIClient.manager.getWeather(completionHandler: { (sevenDayForecast) in
             self.forecast = sevenDayForecast
         }) { (error) in
@@ -65,14 +66,9 @@ class WeatherViewController: UIViewController {
             useFarenheit = true
             unitSwitch.setTitle("Celcius", for: .normal)
         }
+        weatherCV.reloadData()
     }
 }
-
-
-
-
-
-
 
 
 
@@ -85,8 +81,41 @@ extension WeatherViewController: UICollectionViewDataSource {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "weatherCell", for: indexPath) as! WeatherCollectionViewCell
         let selectedForecast = forecast[indexPath.row]
         let dateInfo = getDisplayDate(timestamp: Double(selectedForecast.timestamp))
-        cell.maxTempLabel.text = dateInfo.date + " " + dateInfo.weekday
+        
+        if useFarenheit {
+            cell.maxTempLabel.text = selectedForecast.maxTempF.description + "°F"
+        } else {
+            cell.maxTempLabel.text = selectedForecast.maxTempC.description + "°C"
+        }
+        
+        
+        
+        cell.dateLabel.text = dateInfo.date + " " + dateInfo.weekday
         cell.weatherImage.image = UIImage(named: selectedForecast.icon)
         return cell
     }
 }
+
+extension WeatherViewController: UICollectionViewDelegateFlowLayout {
+        
+
+        func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
+            return CGSize(width: (collectionView.bounds.width), height: collectionView.bounds.height * 0.95)
+        }
+        
+        func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, insetForSectionAt section: Int) -> UIEdgeInsets {
+            return UIEdgeInsets(top: 0, left: 0, bottom: 0, right: 0)
+        }
+        
+        func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumLineSpacingForSectionAt section: Int) -> CGFloat {
+            return 0
+        }
+        
+        func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumInteritemSpacingForSectionAt section: Int) -> CGFloat {
+            return 0
+        }
+    }
+    
+    
+    
+
