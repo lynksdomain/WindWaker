@@ -39,8 +39,15 @@
                                                 <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Uaa-ho-XpM">
                                                     <rect key="frame" x="74.5" y="23" width="223" height="276"/>
                                                 </imageView>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="PNM-DC-Yrd">
-                                                    <rect key="frame" x="165" y="327" width="42" height="21"/>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="PNM-DC-Yrd">
+                                                    <rect key="frame" x="8" y="327" width="364" height="21"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vMR-BC-env">
+                                                    <rect key="frame" x="7" y="360" width="332" height="21"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <nil key="textColor"/>
@@ -56,11 +63,23 @@
                                             <constraint firstItem="Uaa-ho-XpM" firstAttribute="width" secondItem="sYX-Uj-zid" secondAttribute="width" multiplier="0.6" id="ySv-ZQ-ZUh"/>
                                         </constraints>
                                         <connections>
+                                            <outlet property="dateLabel" destination="vMR-BC-env" id="Od7-au-Wti"/>
                                             <outlet property="maxTempLabel" destination="PNM-DC-Yrd" id="QIQ-ZX-odP"/>
+                                            <outlet property="weatherImage" destination="Uaa-ho-XpM" id="ZFQ-4q-qWT"/>
                                         </connections>
                                     </collectionViewCell>
                                 </cells>
                             </collectionView>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3hF-JX-PiZ">
+                                <rect key="frame" x="16" y="586" width="339" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Celcius">
+                                    <color key="titleColor" red="0.0" green="0.32852089410000002" blue="0.57488495110000004" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                </state>
+                                <connections>
+                                    <action selector="unitSwitchPressed:" destination="Dis-fj-pyF" eventType="touchUpInside" id="aS6-uC-lBl"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
@@ -72,6 +91,7 @@
                         <viewLayoutGuide key="safeArea" id="6KT-Cz-60d"/>
                     </view>
                     <connections>
+                        <outlet property="unitSwitch" destination="3hF-JX-PiZ" id="tLD-d6-Xko"/>
                         <outlet property="weatherCV" destination="EfL-mm-TDP" id="7LY-bx-vIT"/>
                     </connections>
                 </viewController>

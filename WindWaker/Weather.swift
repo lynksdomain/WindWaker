@@ -17,11 +17,11 @@ struct PeriodWrapper: Codable {
 }
 
 struct Weather: Codable {
-    let dateTimeISO: String
+    let timestamp: Int
     let maxTempF: Int
     let maxTempC: Int
     let minTempF: Int
     let minTempC: Int
-    let weather: String
+    let icon: String
 }
 
